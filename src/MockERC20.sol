@@ -4,23 +4,22 @@ pragma solidity ^0.8.16;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MockERC20 is ERC20 {
-  //slither-disable-next-line naming-convention
-  uint8 immutable _decimals;
+    uint8 private decimals_;
 
-  constructor(string memory tokenName, string memory tokenSymbol, uint8 tokenDecimals) ERC20(tokenName, tokenSymbol) {
-    require(tokenDecimals > 0, "decimals can't be zero");
-    _decimals = tokenDecimals;
-  }
+    constructor(string memory name, string memory symbol, uint8 tokenDecimals) ERC20(name, symbol) {
+        require(tokenDecimals > 0, "MockERC20: decimals can't be zero");
+        decimals_ = tokenDecimals;
+    }
 
-  function decimals() public view virtual override returns (uint8) {
-    return _decimals;
-  }
+    function decimals() public view virtual override returns (uint8) {
+        return decimals_;
+    }
 
-  function mint(address to, uint256 amount) public virtual {
-    _mint(to, amount);
-  }
+    function mint(address to, uint256 amount) public virtual {
+        _mint(to, amount);
+    }
 
-  function burn(address from, uint256 amount) public virtual {
-    _burn(from, amount);
-  }
+    function burn(address from, uint256 amount) public virtual {
+        _burn(from, amount);
+    }
 }
