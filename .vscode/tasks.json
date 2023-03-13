@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "forge test -vvv",
+			"problemMatcher": [],
+			"label": "mock-tokens: forge test",
+			"detail": "Run forge test command for mock-tokens project"
+		},
+		{
+			"type": "shell",
+			"command": "forge test -vvv --mt \"_only\"",
+			"problemMatcher": [],
+			"label": "mock-tokens: forge test 'only'",
+			"detail": "Run forge test command for mock-tokens with \"_only\" suffix"
+		}
+	]
+}
