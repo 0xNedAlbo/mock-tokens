@@ -14,7 +14,7 @@ These tokens are not intended for production use unless you specifically
 require tokens without any money printing permissions. They are meant for
 testing purposes only.
 
-#### MockERC20
+#### :point_right: MockERC20 :point_left:
 
 MockERC20 is an implementation of the ERC20 interface with the following differences:
 
@@ -22,7 +22,7 @@ MockERC20 is an implementation of the ERC20 interface with the following differe
 - tokens can be burned from any account by anyone (no permission checks)
 - decimals can be set to any value (not fixed to 18) in the constructor
 
-#### MockWETH
+#### :point_right: MockWETH :point_left:
 
 MockWETH is an implementation of the WETH ("Wrapped Ether") interface with the following differences:
 
