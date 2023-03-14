@@ -8,6 +8,8 @@ contract MockWETH is MockERC20, Test {
     event Deposit(address indexed dst, uint wad);
     event Withdrawal(address indexed src, uint wad);
 
+    uint256 public totalMinted;
+
     constructor() MockERC20("Wrapped Ether", "WETH", 18) {}
 
     receive() external payable {
@@ -26,12 +28,13 @@ contract MockWETH is MockERC20, Test {
     }
 
     function mint(address account, uint256 amount) public virtual override {
+        totalMinted += amount;
         super.mint(account, amount);
-        vm.deal(address(this), address(this).balance + amount);
     }
 
     function burn(address account, uint256 amount) public virtual override {
         super.burn(account, amount);
-        vm.deal(account, account.balance + amount);
+        require(amount <= totalMinted, "MockWETH: burn amount exceeds total minted amount");
+        totalMinted -= amount;
     }
 }
