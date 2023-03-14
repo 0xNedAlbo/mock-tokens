@@ -3,8 +3,9 @@ pragma solidity ^0.8.16;
 
 import "forge-std/Test.sol";
 import "@src/MockERC20.sol";
+import "@src/interfaces/IWETH.sol";
 
-contract MockWETH is MockERC20, Test {
+contract MockWETH is MockERC20, IWETH {
     event Deposit(address indexed dst, uint wad);
     event Withdrawal(address indexed src, uint wad);
 
