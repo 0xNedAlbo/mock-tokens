@@ -1,3 +1,5 @@
+[![Unit Tests](https://github.com/Coinflakes-DAO/mock-tokens/actions/workflows/test.yml/badge.svg?event=branch_protection_rule)](https://github.com/Coinflakes-DAO/mock-tokens/actions/workflows/test.yml)
+
 # Coinflakes DAO
 
 ## ~ Mock versions of ERC20 tokens ~
