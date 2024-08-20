@@ -7,4 +7,9 @@
     },
     "solidity.compileUsingRemoteVersion": "v0.8.16",
     "solidity.formatter": "forge",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3C1D61",
+        "titleBar.activeBackground": "#542887",
+        "titleBar.activeForeground": "#FBF9FD"
+    },
 }
